@@ -21,7 +21,7 @@ var defaults = [
 var items = [
     ["sr", "__SendResults__", { }],
     ["sep", "Separator", {}],
-    ["intro", "Message", {consentRequired: true, html: {include: "intro.html"}}],
+    ["intro", "Message", {html: {include: "intro.html"}}],
     ["info", "Form", {html: {include: "info.html"}}],
     [["list_ordering", 0], "Separator", {transfer: 200, normalMessage: "The experiment will start momentarily"}],
     [["list_ordering", 0], "Separator", {transfer: 200, normalMessage: "The experiment will start momentarily"}],
