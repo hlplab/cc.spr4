@@ -109,11 +109,12 @@ $.widget("ui.RegionedSentence", {
         this.sentDivs[0] = $(document.createElement("div")).text("");
         this.mainDiv.append(this.sentDivs[0]);
         this.sentDivs[0].addClass(this.cssPrefix + "sentence");
+        this.sentDivs[0].disableTextSelect();
 
         this.wordSpans = new Array(this.words.length);
         this.wsnjq = new Array(this.words.length); // 'word spans no jQuery'.
         for (var j = 0; j < this.words.length; ++j) {
-            var span = $(document.createElement("span")).text(this.words[j].replace('_',' '));
+            var span = $(document.createElement("span")).text(this.words[j].replace('_',''));
             if (! this.showAhead)
                 span.css('border-color', this.background);
             this.sentDivs[divNo].append(span);
@@ -124,6 +125,7 @@ $.widget("ui.RegionedSentence", {
                 this.sentDivs[divNo] = $(document.createElement("div")).text("");
                 this.mainDiv.append(this.sentDivs[divNo]);
                 this.sentDivs[divNo].addClass(this.cssPrefix + "sentence");
+                this.sentDivs[divNo].disableTextSelect();
             }
         }
 
