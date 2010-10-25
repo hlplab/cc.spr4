@@ -45,6 +45,22 @@
                 $(this).unbind('selectstart.disableTextSelect');
             });
         };
+    } else if ($.browser.webkit || $browser.safari) {
+        // code for Safari and Chrome added 2010-10-25 by Andrew Watts
+         $.fn.disableTextSelect = function() {
+             return this.each(function() {
+                 $(this).css({
+                     'KhtmlUserSelect' : 'none'
+                 });
+             });
+         };
+        $.fn.enableTextSelect = function() {
+            return this.each(function() {
+                $(this).css({
+                    'KhtmlUserSelect' : ''
+                });
+            });
+         };
     } else {
         $.fn.disableTextSelect = function() {
             return this.each(function() {
