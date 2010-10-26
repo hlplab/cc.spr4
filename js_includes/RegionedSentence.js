@@ -280,6 +280,9 @@ $.widget("ui.RegionedSentence", {
                 ["ItemID", this.options.id]
             ]);
         }
+        // If you don't reenable, they can't select the code at the end
+        // of the experiment
+        $('body').enableTextSelect();
     }
 });
 
