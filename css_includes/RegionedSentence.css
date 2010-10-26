@@ -40,3 +40,5 @@
     font-weight: bold;
     -webkit-border-radius: 5px;
 }
+
+[unselectable=on] { -moz-user-select: none; -khtml-user-select: none; user-select: none; }
