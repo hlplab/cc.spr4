@@ -65,6 +65,7 @@ $.widget("ui.RegionedSentence", {
 
         this.mainDiv = $("<div>");
         this.element.append(this.mainDiv);
+        this.element.attr('unselectable', 'on');
 
         this.background = this.element.css('background-color') || "white";
         this.isIE7;
@@ -109,8 +110,7 @@ $.widget("ui.RegionedSentence", {
         this.sentDivs[0] = $(document.createElement("div")).text("");
         this.mainDiv.append(this.sentDivs[0]);
         this.sentDivs[0].addClass(this.cssPrefix + "sentence");
-        //this.sentDivs[0].disableTextSelect();
-        this.sentDivs[0].attr('unselectable', 'on');
+        //this.sentDivs[0].attr('unselectable', 'on');
 
         this.wordSpans = new Array(this.words.length);
         this.wsnjq = new Array(this.words.length); // 'word spans no jQuery'.
@@ -126,8 +126,7 @@ $.widget("ui.RegionedSentence", {
                 this.sentDivs[divNo] = $(document.createElement("div")).text("");
                 this.mainDiv.append(this.sentDivs[divNo]);
                 this.sentDivs[divNo].addClass(this.cssPrefix + "sentence");
-                //this.sentDivs[divNo].disableTextSelect();
-                this.sentDivs[divNo].attr('unselectable', 'on');
+                //this.sentDivs[divNo].attr('unselectable', 'on');
             }
         }
 
