@@ -40,8 +40,8 @@
             return this.each(function() {
                 //$(this).bind('selectstart.disableTextSelect', function() {
                 //    return false;
+                //});
                 $(this).attr('unselectable', 'on');
-                });
             });
         };
         $.fn.enableTextSelect = function() {
