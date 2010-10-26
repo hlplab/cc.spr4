@@ -16,6 +16,9 @@
  * Requirements:
  * - jQuery (John Resig, http://www.jquery.com/)
  **/
+//TODO:  fix code for IE, which at least doesn't work in IE8. looks like
+// unselectable property is what I need for IE
+// NOTE: There is no way to prevent selection in Opera --alw 2010-10-26
 (function($) {
     if ($.browser.mozilla) {
         $.fn.disableTextSelect = function() {
@@ -35,14 +38,16 @@
     } else if ($.browser.msie) {
         $.fn.disableTextSelect = function() {
             return this.each(function() {
-                $(this).bind('selectstart.disableTextSelect', function() {
-                    return false;
+                //$(this).bind('selectstart.disableTextSelect', function() {
+                //    return false;
+                $(this).attr('unselectable', 'on');
                 });
             });
         };
         $.fn.enableTextSelect = function() {
             return this.each(function() {
-                $(this).unbind('selectstart.disableTextSelect');
+                //$(this).unbind('selectstart.disableTextSelect');
+                $(this).removeAttr('unselectable');
             });
         };
     } else if ($.browser.webkit || $.browser.safari) {
