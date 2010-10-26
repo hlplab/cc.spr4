@@ -38,15 +38,15 @@
     } else if ($.browser.msie) {
         $.fn.disableTextSelect = function() {
             return this.each(function() {
-                //$(this).bind('selectstart.disableTextSelect', function() {
-                //    return false;
-                //});
+                $(this).bind('selectstart.disableTextSelect', function() {
+                    return false;
+                });
                 $(this).attr('unselectable', 'on');
             });
         };
         $.fn.enableTextSelect = function() {
             return this.each(function() {
-                //$(this).unbind('selectstart.disableTextSelect');
+                $(this).unbind('selectstart.disableTextSelect');
                 $(this).removeAttr('unselectable');
             });
         };
