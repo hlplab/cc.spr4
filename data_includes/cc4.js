@@ -282,6 +282,6 @@ var items = [
         qs, {q: "Do animals have feelings?", hasCorrect: "Yes", randomOrder: false},
         qs, {q: "Do kids benefit from seeing other pets?", hasCorrect: "Yes", randomOrder: false}],
     ["contact", "Message", {consentRequired: false, html: {include: "contacts.html"}}],
-    ["code", "Message", {consentRequired: false, html: {include: "code.html"}}]
+    ["code", "Form", {consentRequired: false, continueMessage:'This is the final page. You do not need to click to continue.', html: {include: "code.html"}}]
 ];
 
