@@ -16,7 +16,6 @@
  * Requirements:
  * - jQuery (John Resig, http://www.jquery.com/)
  **/
-// NOTE: There is no way to prevent selection in Opera --alw 2010-10-26
 (function($) {
     if ($.browser.mozilla) {
         $.fn.disableTextSelect = function() {
