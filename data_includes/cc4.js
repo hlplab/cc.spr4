@@ -32,7 +32,7 @@ var items = [
         qs, {q: "Is there no talk about the school situation?", hasCorrect: "No", randomOrder: false},
         sep, {errorMessage: "Wrong. Please wait for the next question", normalMessage: "Please wait for the next question"},
         qs, {q: "Is the city of Peoria in Illinois?", hasCorrect: "Yes", randomOrder: false},
-        sep],
+        sep, {}],
     [["practice",3], ds, {s: ['S1:_And you can get them really cheap.', 'S2:_I know I, I had a waiting period on my pistol because I was down in, uh, Tennessee.', 'And, uh, they had a waiting period.'], id: "F.32.SBAR" },
         qs, {q: "Is there a waiting period for pistols in Tennessee?", hasCorrect: "Yes", randomOrder: false},
         sep, {errorMessage: "Wrong. Please wait for the next question", normalMessage: "Please wait for the next question"},
