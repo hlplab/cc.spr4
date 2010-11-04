@@ -277,7 +277,8 @@ $.widget("ui.RegionedSentence", {
                 ["Newline?", boolToInt(((i+1) < this.wordSpans.length) &&
                                        (this.wordSpans[i].offsetTop != this.wordSpans[i+1].offsetTop))],
                 ["Sentence (or sentence MD5)", this.sentenceDesc],
-                ["ItemID", this.options.id]
+                ["ItemID", this.options.id],
+                ["List", this.options.list]
             ]);
         }
         // If you don't reenable, they can't select the code at the end
@@ -287,7 +288,7 @@ $.widget("ui.RegionedSentence", {
 });
 
 ibex_controller_set_properties("RegionedSentence", {
-    obligatory: ["s", "id"],
+    obligatory: ["s", "id", "list"],
     htmlDescription: function (opts) {
         return $(document.createElement("div")).text(opts.s);
     }
