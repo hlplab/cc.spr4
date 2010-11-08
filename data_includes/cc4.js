@@ -1,5 +1,7 @@
 var shuffleSequence = seq("intro", "info", "list_ordering", "startprac", "practice", "endprac", sepWith("sep", anyOf("filler", "StimThat.OriginalThat","StimZero.OriginalThat","StimThat.OriginalZero","StimZero.OriginalZero")), "contact", "sr", "code");
 
+var pastworkers = ["A127R5QI5OGBIK", "A162TOBLD1669W", "A17CIT8XFITL6D", "A1G5FQO266Q4Y4", "A1GFL5FF0P8C7S", "A1JQS9AN8LEAKZ", "A1M90FFR8GU9TP", "A1Q53V40JETIQ9", "A1UTM3JGPY4RPW", "A253Q11TZPQPIZ", "A2B43KC23BHG8X", "A2MGH3MBXMKD96", "A31WOUTVXO1VE4", "A3AM7D2UWBRS7Z", "A3AV8LLKM8LGFW", "A3ESUADNEH83UU", "A3O749MMVC22QA", "A4F5A6X7RL479", "A5CMNI7B03XL", "A98XHW6B1VSSQ", "AARST1TOOXCPL", "ACTW5YEWV9OR0", "AGX7LA4E59JZ3", "AN8XVL9FULOYY", "A14SNQOYGXPZ7K", "A14TCF29MXZOLD", "A15T1WFW5B2OPR", "A1C67XYB7W7MVE", "A1IW5ZBB9H9K8E", "A1RWNYJA5X25YH", "A1TCURESP0T0NM", "A1V6BJT8KGVC1K", "A20T9KANQ1Q3SW", "A2HM35CWB7IIFM", "A2LACFJAJQE4WT", "A2OJSPDXI3VGV6", "A2OZPO3WNNIE24", "A30WJWW131W266", "A35Y1UHFAEOP41", "A37AB7CFQKGPWF", "A37QLKXVI7WV7W", "A3GMN3YXRDE83V", "A3OLBIOP3Q6ZTX", "A5379LUINT3PC", "A5ODFS59FOSMV", "AVLITU1Z8OBI3", "AWGLY2Q18H4V4", "AZ76BW7229Y3Y"];
+
 var ds = "RegionedSentence";
 var qs = "Question";
 var sep = "Separator";
@@ -23,7 +25,11 @@ var items = [
     ["sr", "__SendResults__", { }],
     ["sep", "Separator", {}],
     ["intro", "Message", {html: {include: "intro.html"}}],
-    ["info", "Form", {html: {include: "info.html"}}],
+    ["info", "Form", {html: {include: "info.html"},
+        validators: {
+            workerid: function(s) {if (pastworkers.indexOf(s) == -1) return true; else return "You have already done a CC SPR experiment";}
+        }
+    }],
     [["list_ordering", 0], "Separator", {transfer: 200, normalMessage: "The experiment will start momentarily"}],
     [["list_ordering", 0], "Separator", {transfer: 200, normalMessage: "The experiment will start momentarily"}],
     ["startprac", "Message", {consentRequired: false, html: {include: "start_practice.html"}}],
